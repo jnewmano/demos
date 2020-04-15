@@ -2,6 +2,6 @@
 
 set -e
 
-go build -v -i
+go build -v -i -o trace
 
-./mandelbrot
+./trace
