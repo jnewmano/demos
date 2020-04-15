@@ -22,7 +22,7 @@ func bufferString(a, b, c string, d int) string {
 }
 
 func concatString(a, b, c string, d int) string {
-	s := a + " - " + b + " / " + c + strconv.Itoa(d)
+	s := a + " - " + b + " / " + c + " " + strconv.Itoa(d)
 	return s
 }
 
