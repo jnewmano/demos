@@ -1,0 +1,12 @@
+
+http://adapter-manager-01:8001/debug/pprof
+
+# profile
+go tool pprof http://adapter-manager-01:8001/debug/pprof/profile
+
+# memory
+go tool pprof http://adapter-manager-01:8001/debug/pprof/heap
+
+
+go test --run=XXX --bench=BenchmarkStringPrintf --cpuprofile=profile.out
+go tool pprof profile.out

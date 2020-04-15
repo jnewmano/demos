@@ -1,0 +1,7 @@
+
+cd $GOPATH/src/github.com/jnewmano/demos/performance/benchmarking
+
+go test --bench=BenchmarkString .
+
+go test --bench=BenchmarkArray .
+

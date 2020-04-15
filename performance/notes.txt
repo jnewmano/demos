@@ -1,0 +1,43 @@
+
+https://blog.golang.org/profiling-go-programs
+
+https://www.infoq.com/presentations/go-programming-language
+
+https://software.intel.com/en-us/blogs/2014/05/10/debugging-performance-issues-in-go-programs
+
+https://github.com/golang/go/issues/14689
+
+
+# benchmarking tests
+
+// string generation from parts
+1. Sprintf
+2. String Builder
+3. Bytes builder
+4. Manual concat
+
+// array filling
+1. don't preallocate
+2. preallocate capacity
+3. preallocate length
+
+// JSON unmarshalling
+1. ioutil.ReadAll(), unmarshal
+2. json.NewDecoder unmarshal
+
+
+go test -run=none -bench=ClientServerParallel4 -cpuprofile=cprof net/http
+
+# pprof
+
+# memory
+go tool pprof http://localhost:8001/debug/pprof/heap
+
+# profile
+go tool pprof http://localhost:8001/debug/pprof/profile
+
+# pull trace
+curl http://localhost:8001/debug/pprof/trace?seconds=5 -o trace.out
+curl http://adapter-manager-01:8001/debug/pprof/trace?seconds=5 -o trace.out
+
+go tool trace trace.out

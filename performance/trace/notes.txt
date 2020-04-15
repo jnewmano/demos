@@ -1,0 +1,9 @@
+
+cd $GOPATH/src/github.com/jnewmano/demos/trace
+
+./run
+
+# get the trace data
+curl -o trace.out http://localhost:8000/debug/pprof/trace?seconds=5
+
+go tool trace trace.out
